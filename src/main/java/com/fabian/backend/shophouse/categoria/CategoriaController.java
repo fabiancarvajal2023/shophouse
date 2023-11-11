@@ -2,6 +2,7 @@ package com.fabian.backend.shophouse.categoria;
 
 import com.fabian.backend.shophouse.categoria.database.dao.CategoriaDao;
 import com.fabian.backend.shophouse.categoria.database.modelo.Categoria;
+import com.fabian.backend.shophouse.util.AppConstants;
 import lombok.RequiredArgsConstructor;
 import org.apache.commons.io.FileUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,18 +21,18 @@ import java.util.List;
 @RequestMapping("/api/v1/categoria")
 @RequiredArgsConstructor
 public class CategoriaController {
-    private String FILE_PATH_ROOT = "/Users/wilson/Documents/tiendafiles/categoria/";
+    private String FILE_PATH = AppConstants.ROOT_FOLDER + File.separator + "categoria";
     @Autowired
     private CategoriaDao categoriaDao;
 
 
     @GetMapping("")
-    public List<Categoria> getCategorias(){
+    public List<Categoria> getCategorias() {
         return categoriaDao.getCategorias();
     }
 
     @GetMapping("/buscar/{nombre}")
-    public List<Categoria> getCategoriaPorNombre(@PathVariable("nombre") String nombre){
+    public List<Categoria> getCategoriaPorNombre(@PathVariable("nombre") String nombre) {
         return categoriaDao.getcategoriaPorNombre(nombre);
     }
 
@@ -39,7 +40,7 @@ public class CategoriaController {
     public ResponseEntity<byte[]> getImage(@PathVariable("filename") String filename) {
         byte[] image = new byte[0];
         try {
-            image = FileUtils.readFileToByteArray(new File(FILE_PATH_ROOT + filename));
+            image = FileUtils.readFileToByteArray(new File(FILE_PATH +File.separator+ filename));
         } catch (IOException e) {
             System.out.println(e.getMessage());
             e.printStackTrace();
