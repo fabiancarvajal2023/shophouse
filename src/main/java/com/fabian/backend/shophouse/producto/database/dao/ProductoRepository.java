@@ -11,7 +11,7 @@ import org.springframework.stereotype.Repository;
 public interface ProductoRepository extends JpaRepository<Producto, Long> {
 
     @Query(value = "SELECT p FROM Producto p")
-    Page<Producto> buscarTodosConPaginacion(Pageable pageable);
+    Page<Producto>  buscarTodosConPaginacion(Pageable pageable);
 
     @Query(value = "SELECT p FROM Producto p Where lower(p.nombre) like concat('%',:nombre,'%')")
     Page<Producto> buscarPorNombreConPaginacion(String nombre, Pageable pageable);
