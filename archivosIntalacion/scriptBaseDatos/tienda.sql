@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Nov 11, 2023 at 12:37 PM
+-- Generation Time: Nov 20, 2023 at 01:28 PM
 -- Server version: 5.7.28
 -- PHP Version: 8.2.10
 
@@ -40,7 +40,7 @@ CREATE TABLE `categoria` (
 INSERT INTO `categoria` (`id`, `cat_nombre`, `cat_imagen`) VALUES
 (1, 'Agrarios', 'agrarios.jpg'),
 (2, 'Aseo', 'Aseo.jpg'),
-(3, 'Carnico', 'Carnico.jpg'),
+(3, 'Cárnicos', 'Carnico.jpg'),
 (4, 'Salud', 'Salud.jpg'),
 (5, 'Empaquetados', 'Empaquetados.jpg'),
 (6, 'Lacteos', 'Lacteos.jpg'),
@@ -156,44 +156,44 @@ CREATE TABLE `producto` (
 --
 
 INSERT INTO `producto` (`id`, `mar_id`, `cat_id`, `prov_id`, `prod_imagen`, `prod_nombre`, `prod_codigo_barras`, `prod_precio_venta`, `prod_precio_compra`) VALUES
-(1, 18, 6, NULL, 'BonyurtZucaritas.jpg', 'BonyurtZucaritas', '1112', 3500, 2600),
-(2, 18, 6, NULL, 'BonyurtChocokrispis.jpg', 'BonyurtChocokrispis', '1113', 3500, 2600),
-(3, 12, 6, NULL, 'CremadelecheAlqueria.jpg', 'CremadelecheAlqueria', '1114', 3000, 2300),
-(5, 12, 6, NULL, 'MegaLitroAlqueriaDeslactosad', 'MegaLitroAlqueriaDeslactosada', '1116', 6200, 5000),
-(6, 12, 6, NULL, 'MegaLitroAlqueriaEntera.jpg', 'MegaLitroAlqueriaEntera', '1117', 6000, 4900),
-(7, 7, 7, NULL, 'AguilaLight.jpg', 'AguilaLight', '1118', 2700, 1800),
-(8, 7, 7, NULL, 'AguilaOrigina.jpg', 'AguilaOrigina', '1119', 2600, 1600),
-(10, 7, 7, NULL, 'PokerBavaria.jpg', 'PokerBavaria', '11221', 2600, 1800),
-(11, 7, 7, NULL, 'ClubColombiaD.jpg', 'ClubColombiaD', '1134', 4000, 2500),
-(12, 7, 7, NULL, 'ClubColombiaN.jpg', 'ClubColombiaN', '212312', 4000, 2600),
-(13, 7, 8, NULL, 'PonyMaltaB.jpg', 'PonyMalta', '43231', 2000, 1200),
-(14, 7, 8, NULL, 'PonyMaltaPpersonal.jpg', 'PonyMaltaPpersonal', '44532', 2200, 1300),
-(15, 7, 8, NULL, 'PonyMaltaLitro.jpg', 'PonyMaltaLitro', '54212', 4500, 3000),
-(16, 6, 9, NULL, 'PanBimboB.jpg', 'PanBimboB', '312312', 5000, 3400),
-(17, 6, 9, NULL, 'PanBimboI.jpg', 'Pan BimboI', '43122122', 6000, 4800),
-(18, 6, 9, NULL, 'PonqueBimboCasero.jpg', 'PonqueBimboCasero', '443556', 4500, 3000),
-(19, 6, 9, NULL, 'PanqueBimboVainilla.jpg', 'PanqueBimboVainilla', '66545', 2200, 1500),
-(20, 6, 9, NULL, 'SubmarinosArequipe.jpg', 'SubmarinosArequipe', '334423', 1500, 800),
-(21, 6, 9, NULL, 'SubmarinosFresa.jpg', 'SubmarinosFresa', '66567', 1500, 800),
-(22, 1, 8, NULL, 'CocacolaPersonalV.jpg', 'CocacolaPersonalV', '324578', 2000, 1200),
-(23, 1, 8, NULL, 'CuatroPersonalV.jpg', 'CuatroPersonalV', '554433', 2000, 1200),
-(24, 1, 8, NULL, 'CocacolaPersonalP.jpg', 'CocacolaPersonalP', '4431122', 2500, 1400),
-(25, 1, 8, NULL, 'Cocacola2LP.jpg', 'Cocacola2LP', '99887', 4800, 3000),
+(1, 18, 6, NULL, 'BonyurtZucaritas.jpg', 'Bonyurt Zucaritas', '1112', 3500, 2600),
+(2, 18, 6, NULL, 'BonyurtChocokrispis.jpg', 'Bonyurt Chocokrispis', '1113', 3500, 2600),
+(3, 12, 6, NULL, 'CremadelecheAlqueria.jpg', 'Crema de leche Alqueria', '1114', 3000, 2300),
+(5, 12, 6, NULL, 'MegaLitroAlqueriades.jpg', 'Mega Litro Alqueria Deslactosada', '1116', 6200, 5000),
+(6, 12, 6, NULL, 'MegaLitroAlqueriaEntera.jpg', 'Mega Litro Alqueria Entera', '1117', 6000, 4900),
+(7, 7, 7, NULL, 'AguilaLight.jpg', 'Aguila Light', '1118', 2700, 1800),
+(8, 7, 7, NULL, 'AguilaOrigina.jpg', 'Aguila Origina', '1119', 2600, 1600),
+(10, 7, 7, NULL, 'PokerBavaria.jpg', 'Poker Bavaria', '11221', 2600, 1800),
+(11, 7, 7, NULL, 'ClubColombiaD.jpg', 'Club ColombiaD', '1134', 4000, 2500),
+(12, 7, 7, NULL, 'ClubColombiaN.jpg', 'Club ColombiaN', '212312', 4000, 2600),
+(13, 7, 8, NULL, 'PonyMaltaB.jpg', 'Pony Malta', '43231', 2000, 1200),
+(14, 7, 8, NULL, 'PonyMaltaPpersonal.jpg', 'Pony Malta personal', '44532', 2200, 1300),
+(15, 7, 8, NULL, 'PonyMaltaLitro.jpg', 'Pony Malta Litro', '54212', 4500, 3000),
+(16, 6, 9, NULL, 'PanBimboB.jpg', 'Pan Bimbo', '312312', 5000, 3400),
+(17, 6, 9, NULL, 'PanBimboI.jpg', 'Pan Bimbo', '43122122', 6000, 4800),
+(18, 6, 9, NULL, 'PonqueBimboCasero.jpg', 'Ponque Bimbo Casero', '443556', 4500, 3000),
+(19, 6, 9, NULL, 'PanqueBimboVainilla.jpg', 'Panque Bimbo Vainilla', '66545', 2200, 1500),
+(20, 6, 9, NULL, 'SubmarinosArequipe.jpg', 'Submarinos Arequipe', '334423', 1500, 800),
+(21, 6, 9, NULL, 'SubmarinosFresa.jpg', 'Submarinos Fresa', '66567', 1500, 800),
+(22, 1, 8, NULL, 'CocacolaPersonalV.jpg', 'Cocacola Personal', '324578', 2000, 1200),
+(23, 1, 8, NULL, 'CuatroPersonalV.jpg', 'Cuatro Personal', '554433', 2000, 1200),
+(24, 1, 8, NULL, 'CocacolaPersonalP.jpg', 'Cocaco la Personal', '4431122', 2500, 1400),
+(25, 1, 8, NULL, 'Cocacola2LP.jpg', 'Cocacola 2L', '99887', 4800, 3000),
 (26, 7, 7, NULL, 'Costeñita.jpg', 'Costeñita', '5588', 2500, 1450),
-(28, 11, 6, NULL, 'LecheEnteraC1000ml.jpg', 'LecheEnteraC1000ml', '99776445', 4800, 4000),
-(29, 11, 6, NULL, 'LecheDeslactosadaC1L.jpg', 'LecheDeslactaosadaC1L', '113322', 4200, 5100),
+(28, 11, 6, NULL, 'LecheEnteraC1000ml.jpg', 'Leche Entera 1000ml', '99776445', 4800, 4000),
+(29, 11, 6, NULL, 'LecheDeslactosadaC1L.jpg', 'Leche Deslactosada 1L', '113322', 4200, 5100),
 (30, 8, 5, NULL, 'Nucita.jpg', 'Nucita', '7700', 1000, 500),
 (31, 8, 5, NULL, 'Chocomelos.jpg', 'Chocomelos', '11212', 4500, 3700),
-(32, 8, 5, NULL, 'BonbonbunPqt.jpg', 'BonbonbunPqt', '88797', 11500, 8000),
-(33, 14, 10, NULL, 'MarlboroFusion.jpg', 'MarlboroFusion', '554433', 500, 4000),
-(34, 14, 10, NULL, 'RothmansAzul.jpg', 'RothmansAzul', '2288', 5000, 4100),
-(35, 14, 10, NULL, 'ChesterfieldAzul.jpg', 'ChesterfieldAzul', '00576', 4800, 3900),
-(36, 2, 5, NULL, 'PapasPollo.jpg', 'PapasPollo', '', 2300, 1700),
-(37, 2, 5, NULL, 'DetoditoBBQ.jpg', 'DetoditoBBQ', '112341', 2500, 1900),
+(32, 8, 5, NULL, 'BonbonbumPqt.jpg', 'Bonbonbun', '88797', 11500, 8000),
+(33, 14, 10, NULL, 'MarlboroFusion.jpg', 'Marlboro Fusion', '554433', 500, 4000),
+(34, 14, 10, NULL, 'RothmansAzul.jpg', 'Rothmans Azul', '2288', 5000, 4100),
+(35, 14, 10, NULL, 'ChesterfieldAzul.jpg', 'Chesterfield Azul', '00576', 4800, 3900),
+(36, 2, 5, NULL, 'PapasPollo.jpg', 'Papas Pollo', '', 2300, 1700),
+(37, 2, 5, NULL, 'DetoditoBBQ.jpg', 'Detodito BBQ', '112341', 2500, 1900),
 (38, 2, 5, NULL, 'Cheesetris.jpg', 'Cheesetris', '5500', 1700, 1200),
-(39, 16, 3, NULL, 'ChorizoLasBrisas.jpg', 'ChorizoLasBrisas', '213141', 13000, 11000),
-(40, 16, 3, NULL, 'HamburguesaLasBrisas.jpg', 'HamburguesaLasBrisas', '66612', 4800, 3600),
-(41, 17, 3, NULL, 'PolloEntero.jpg', 'PolloEntero', '76789', 15000, 11000),
+(39, 16, 3, NULL, 'ChorizoLasBrisas.jpg', 'Chorizo Las Brisas', '213141', 13000, 11000),
+(40, 16, 3, NULL, 'HamburguesaLasBrisas.jpg', 'Hamburguesa Las Brisas', '66612', 4800, 3600),
+(41, 17, 3, NULL, 'PolloEntero.jpg', 'Pollo Entero', '76789', 15000, 11000),
 (42, 9, 2, NULL, 'Headshoulders.jpg', 'Headshoulders', '233442', 6000, 4000),
 (43, 3, 8, NULL, 'Colombiana3Lt.jpg', 'Colombiana3Lt', '445511', 7000, 5000),
 (44, 3, 8, NULL, 'Manzana3Lt.jpg', 'Manzana3Lt', '778855', 7000, 5000),
@@ -215,6 +215,27 @@ CREATE TABLE `productoventa` (
   `prodVentPrecio` int(11) NOT NULL,
   `prodVentPrecioCompra` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `promocion`
+--
+
+CREATE TABLE `promocion` (
+  `id` int(11) NOT NULL,
+  `cat_id` int(11) NOT NULL,
+  `prom_porcent` int(11) NOT NULL,
+  `prom_articulo_req` tinyint(1) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `promocion`
+--
+
+INSERT INTO `promocion` (`id`, `cat_id`, `prom_porcent`, `prom_articulo_req`) VALUES
+(1, 1, 20, 0),
+(2, 2, 30, 1);
 
 -- --------------------------------------------------------
 
@@ -321,6 +342,13 @@ ALTER TABLE `productoventa`
   ADD KEY `fk_productoventa_producto` (`prodId`);
 
 --
+-- Indexes for table `promocion`
+--
+ALTER TABLE `promocion`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `fk_categoria_promocion` (`cat_id`);
+
+--
 -- Indexes for table `proveedor`
 --
 ALTER TABLE `proveedor`
@@ -388,6 +416,12 @@ ALTER TABLE `productoventa`
   MODIFY `prodVentId` bigint(20) NOT NULL AUTO_INCREMENT;
 
 --
+-- AUTO_INCREMENT for table `promocion`
+--
+ALTER TABLE `promocion`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
 -- AUTO_INCREMENT for table `proveedor`
 --
 ALTER TABLE `proveedor`
@@ -429,6 +463,12 @@ ALTER TABLE `producto`
 ALTER TABLE `productoventa`
   ADD CONSTRAINT `fk_productoventa_producto` FOREIGN KEY (`prodId`) REFERENCES `producto` (`id`),
   ADD CONSTRAINT `fk_productoventa_venta` FOREIGN KEY (`ventId`) REFERENCES `venta` (`ventId`);
+
+--
+-- Constraints for table `promocion`
+--
+ALTER TABLE `promocion`
+  ADD CONSTRAINT `fk_categoria_promocion` FOREIGN KEY (`cat_id`) REFERENCES `categoria` (`id`);
 
 --
 -- Constraints for table `venta`
