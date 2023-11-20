@@ -27,24 +27,24 @@ public class ProductoController {
     private ProductDao productDao;
 
 
-    @GetMapping("/{page}/{limit}")
-    public List<Producto> buscarTodos(@PathVariable int page, @PathVariable int limit) {
-        return productDao.buscarTodos(page, limit);
+    @GetMapping("")
+    public List<Producto> buscarTodos() {
+        return productDao.buscarTodos();
     }
 
-    @GetMapping("/{nombre}/{page}/{limit}")
-    public List<Producto> buscarPorNombre(@PathVariable String nombre, @PathVariable int page, @PathVariable int limit) {
-        return productDao.buscarPorNombre(nombre, page, limit);
+    @GetMapping("/{nombre}")
+    public List<Producto> buscarPorNombre(@PathVariable String nombre) {
+        return productDao.buscarPorNombre(nombre);
     }
 
-    @GetMapping("/categoria/{categoriaId}/{page}/{limit}")
-    public List<Producto> buscarPorCategoria(@PathVariable Integer categoriaId, @PathVariable int page, @PathVariable int limit) {
-        return productDao.buscarPorCategoria(categoriaId, page, limit);
+    @GetMapping("/categoria/{categoriaId}")
+    public List<Producto> buscarPorCategoria(@PathVariable Integer categoriaId) {
+        return productDao.buscarPorCategoria(categoriaId);
     }
 
-    @GetMapping("/categoria/{categoriaId}/{nombre}/{page}/{limit}")
-    public List<Producto> buscarPorCategoriaYNombre(@PathVariable Integer categoriaId, @PathVariable String nombre, @PathVariable int page, @PathVariable int limit) {
-        return productDao.buscarPorCategoriaYNombre(categoriaId, nombre, page, limit);
+    @GetMapping("/categoria/{categoriaId}/{nombre}")
+    public List<Producto> buscarPorCategoriaYNombre(@PathVariable Integer categoriaId, @PathVariable String nombre) {
+        return productDao.buscarPorCategoriaYNombre(categoriaId, nombre);
     }
 
     @GetMapping("/imagen/{filename}")
