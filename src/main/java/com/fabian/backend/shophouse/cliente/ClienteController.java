@@ -3,6 +3,7 @@ package com.fabian.backend.shophouse.cliente;
 import com.fabian.backend.shophouse.cliente.database.dao.ClienteDao;
 import com.fabian.backend.shophouse.cliente.model.ClienteRequest;
 import com.fabian.backend.shophouse.cliente.model.LoginRequest;
+import com.fabian.backend.shophouse.cliente.model.LoginResponse;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -19,7 +20,7 @@ public class ClienteController {
     private ClienteDao clienteDao;
 
     @PostMapping("/login")
-    public boolean login(@RequestBody LoginRequest loginRequest) {
+    public LoginResponse login(@RequestBody LoginRequest loginRequest) {
         return clienteDao.login(loginRequest.getEmail(), loginRequest.getPassword());
     }
 

@@ -2,6 +2,7 @@ package com.fabian.backend.shophouse.cliente.database.dao;
 
 import com.fabian.backend.shophouse.cliente.database.model.Cliente;
 import com.fabian.backend.shophouse.cliente.model.ClienteRequest;
+import com.fabian.backend.shophouse.cliente.model.LoginResponse;
 import com.fabian.backend.shophouse.tipoidentificacion.database.dao.TipoIdentificacionRepository;
 import com.fabian.backend.shophouse.tipoidentificacion.database.model.TipoIdentificacion;
 import lombok.RequiredArgsConstructor;
@@ -18,9 +19,14 @@ public class ClienteDaoImpl implements ClienteDao {
     private final TipoIdentificacionRepository tipoIdentificacionRepository;
 
     @Override
-    public boolean login(String email, String password) {
+    public LoginResponse login(String email, String password) {
+        LoginResponse loginResponse = new LoginResponse("");
         Optional <Cliente> cliente = clienteRepository.loginCliente(email, password);
-        return cliente.isPresent();
+        if(cliente.isPresent())
+        {
+            loginResponse.setNombre(cliente.get().getNombre());
+        }
+        return loginResponse;
     }
 
     @Override
