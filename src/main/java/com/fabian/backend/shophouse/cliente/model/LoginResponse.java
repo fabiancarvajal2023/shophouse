@@ -9,4 +9,5 @@ import lombok.NoArgsConstructor;
 @Data
 public class LoginResponse {
     String nombre;
+    Long id;
 }

@@ -20,11 +20,12 @@ public class ClienteDaoImpl implements ClienteDao {
 
     @Override
     public LoginResponse login(String email, String password) {
-        LoginResponse loginResponse = new LoginResponse("");
+        LoginResponse loginResponse = new LoginResponse("",-1L);
         Optional <Cliente> cliente = clienteRepository.loginCliente(email, password);
         if(cliente.isPresent())
         {
             loginResponse.setNombre(cliente.get().getNombre());
+            loginResponse.setId(cliente.get().getId());
         }
         return loginResponse;
     }

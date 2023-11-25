@@ -18,7 +18,7 @@ public class Venta {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     @Column(name = "vent_fecha", nullable = false)
-    private Date fecha;
+    private Long fecha;
 
     @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @JoinColumn(name = "cli_id", nullable = false)

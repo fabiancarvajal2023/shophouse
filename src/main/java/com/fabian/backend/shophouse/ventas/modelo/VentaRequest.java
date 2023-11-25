@@ -11,8 +11,7 @@ import java.util.List;
 @NoArgsConstructor
 @Data
 public class VentaRequest {
-
-    private Date fecha;
+    private Long fecha;
     private Long cliente;
     private Integer ventaTotal;
     private Integer ventaTotalCompra;

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Nov 20, 2023 at 01:28 PM
+-- Generation Time: Nov 25, 2023 at 01:13 AM
 -- Server version: 5.7.28
 -- PHP Version: 8.2.10
 
@@ -76,13 +76,6 @@ CREATE TABLE `cliente` (
   `cli_direccion` varchar(100) DEFAULT NULL,
   `cli_telefono` varchar(20) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `cliente`
---
-
-INSERT INTO `cliente` (`id`, `tipo_id`, `cli_identificacion`, `cli_nombre`, `cli_email`, `cli_password`, `cli_direccion`, `cli_telefono`) VALUES
-(1, 1, '1075220291', 'Wilson Carvajal', 'wilnacio@hotmail.com', '1234', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -208,12 +201,12 @@ INSERT INTO `producto` (`id`, `mar_id`, `cat_id`, `prov_id`, `prod_imagen`, `pro
 --
 
 CREATE TABLE `productoventa` (
-  `prodVentId` bigint(20) NOT NULL,
-  `ventId` bigint(20) NOT NULL,
-  `prodId` bigint(20) NOT NULL,
-  `prodVentCantidad` int(11) NOT NULL,
-  `prodVentPrecio` int(11) NOT NULL,
-  `prodVentPrecioCompra` int(11) NOT NULL
+  `id` bigint(20) NOT NULL,
+  `vent_id` bigint(20) NOT NULL,
+  `prod_id` bigint(20) NOT NULL,
+  `prod_vent_cantidad` int(11) NOT NULL,
+  `prod_vent_precio` int(11) NOT NULL,
+  `prod_vent_precio_compra` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -278,13 +271,11 @@ INSERT INTO `tipoidentificacion` (`id`, `tipo_nombre`, `tipo_abreviatura`) VALUE
 --
 
 CREATE TABLE `venta` (
-  `ventId` bigint(20) NOT NULL,
-  `ventFecha` datetime NOT NULL,
-  `cliId` bigint(20) DEFAULT NULL,
-  `ciuId` int(11) NOT NULL,
-  `ventTotal` int(11) DEFAULT NULL,
-  `VentTotalCompra` int(11) DEFAULT NULL,
-  `domId` int(11) NOT NULL
+  `id` bigint(20) NOT NULL,
+  `vent_fecha` bigint(20) NOT NULL,
+  `cli_id` bigint(20) DEFAULT NULL,
+  `vent_total` int(11) DEFAULT NULL,
+  `vent_total_compra` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -337,9 +328,9 @@ ALTER TABLE `producto`
 -- Indexes for table `productoventa`
 --
 ALTER TABLE `productoventa`
-  ADD PRIMARY KEY (`prodVentId`),
-  ADD KEY `fk_productoventa_venta` (`ventId`),
-  ADD KEY `fk_productoventa_producto` (`prodId`);
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `fk_productoventa_venta` (`vent_id`),
+  ADD KEY `fk_productoventa_producto` (`prod_id`);
 
 --
 -- Indexes for table `promocion`
@@ -364,10 +355,8 @@ ALTER TABLE `tipoidentificacion`
 -- Indexes for table `venta`
 --
 ALTER TABLE `venta`
-  ADD PRIMARY KEY (`ventId`),
-  ADD KEY `fk_venta_ciudad` (`ciuId`),
-  ADD KEY `fk_venta_cliente` (`cliId`),
-  ADD KEY `fk_venta_domiciliario` (`domId`);
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `fk_venta_cliente` (`cli_id`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -389,7 +378,7 @@ ALTER TABLE `ciudad`
 -- AUTO_INCREMENT for table `cliente`
 --
 ALTER TABLE `cliente`
-  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `domiciliario`
@@ -413,7 +402,7 @@ ALTER TABLE `producto`
 -- AUTO_INCREMENT for table `productoventa`
 --
 ALTER TABLE `productoventa`
-  MODIFY `prodVentId` bigint(20) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `promocion`
@@ -437,7 +426,7 @@ ALTER TABLE `tipoidentificacion`
 -- AUTO_INCREMENT for table `venta`
 --
 ALTER TABLE `venta`
-  MODIFY `ventId` bigint(20) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- Constraints for dumped tables
@@ -461,8 +450,8 @@ ALTER TABLE `producto`
 -- Constraints for table `productoventa`
 --
 ALTER TABLE `productoventa`
-  ADD CONSTRAINT `fk_productoventa_producto` FOREIGN KEY (`prodId`) REFERENCES `producto` (`id`),
-  ADD CONSTRAINT `fk_productoventa_venta` FOREIGN KEY (`ventId`) REFERENCES `venta` (`ventId`);
+  ADD CONSTRAINT `fk_productoventa_producto` FOREIGN KEY (`prod_id`) REFERENCES `producto` (`id`),
+  ADD CONSTRAINT `fk_productoventa_venta` FOREIGN KEY (`vent_id`) REFERENCES `venta` (`id`);
 
 --
 -- Constraints for table `promocion`
@@ -474,9 +463,7 @@ ALTER TABLE `promocion`
 -- Constraints for table `venta`
 --
 ALTER TABLE `venta`
-  ADD CONSTRAINT `fk_venta_ciudad` FOREIGN KEY (`ciuId`) REFERENCES `ciudad` (`ciuId`),
-  ADD CONSTRAINT `fk_venta_cliente` FOREIGN KEY (`cliId`) REFERENCES `cliente` (`id`),
-  ADD CONSTRAINT `fk_venta_domiciliario` FOREIGN KEY (`domId`) REFERENCES `domiciliario` (`domId`);
+  ADD CONSTRAINT `fk_venta_cliente` FOREIGN KEY (`cli_id`) REFERENCES `cliente` (`id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
